@@ -185,3 +185,31 @@ if (scoreJohn > scoreMike && scoreJohn > scoreMary) {
 
 
 
+// Lecture: Functions
+
+
+function calculateAge(yearOfBirth){
+    let age = 2018 - yearOfBirth;
+    return age;
+}
+
+let birthdayMike = calculateAge(1999);
+let birthdayJohn = calculateAge(1998);
+let birthdaySophia = calculateAge(2000);
+let birthdayJimmy = calculateAge(1900);
+
+function yearsUntilRetirement(name, year){
+    let age = calculateAge(year);
+    let retirement = 72 - age;
+
+    if (retirement >= 0){
+        console.log(name + ' is ' + age + ' old and retires in ' + retirement + ' years.')
+    } else {
+        console.log(name + ' is ' + age + ' old and is already retired.')
+    }
+}
+
+yearsUntilRetirement('Mike', 1999);
+yearsUntilRetirement('John', 1998);
+yearsUntilRetirement('Sophia', 2000);
+yearsUntilRetirement('Jimmy', 1900);
