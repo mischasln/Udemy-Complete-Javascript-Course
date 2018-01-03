@@ -1,0 +1,17 @@
+node_modules/
+bower_components/
+dist
+tmp/
+src/dojo
+src/dgrid
+src/dstore
+src/util
+src/dijit
+src/dojox
+src/**/*.js
+*.iml
+.idea
+npm-debug.log
+firefox_root/
+.DS_Store
+package-lock.json
