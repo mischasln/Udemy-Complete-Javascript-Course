@@ -1,29 +1,28 @@
-// Lecture: Variables
-/*
-const name = 'John';
+//  LECTURE: Variables
+/* let name = 'John';
 console.log(name);
 
-const lastName = 'Smith';
+let lastName = 'Smith';
 console.log(lastName);
 
-const age = 26;
+let age = 26;
 console.log(age);
 
-const fullAge = true;
-console.log(fullAge);
+let fullAge = true;
+console.log(fullAge); */
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// Lecture: Variables 2
-let name = 'John';
+
+//  LECTURE: Variables 2
+/* let name = 'John';
 let age = 32;
 
-//console.log(name + age);
-//console.log(age + age);
+// console.log(name + age);
+// console.log(age + age);
 
 let job, isMarried;
 
-//console.log(job);
+// console.log(job);
 
 job = 'teacher';
 isMarried = true;
@@ -35,17 +34,15 @@ job = 'driver';
 
 console.log(name + ' is a ' + age + ' years old ' + job + '. Is he married? ' + isMarried + '.');
 
-//let lastName = prompt('What is the last name?');
-//console.log(lastName);
+// let lastName = prompt('What is the last name?');
+// console.log(lastName);
 
-alert(name + ' is a ' + age + ' years old ' + job + '. Is he married? ' + isMarried + '.');
-*/
+alert(name + ' is a ' + age + ' years old ' + job + '. Is he married? ' + isMarried + '.'); */
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// Lecture: Operations
-/*
-let now = 2018;
+
+//  LECTURE: Operations
+/* let now = 2018;
 let birthday = now - 26;
 
 birthday = now - 26 * 2;
@@ -68,12 +65,11 @@ ageMark *= 2;
 // ageMark = 52
 
 console.log(ageJohn);
-console.log(ageMark);
-*/
+console.log(ageMark); */
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// Lecture: If/else statements
+
+// LECTURE: If/else statements
 /*
 let name = 'John';
 let age = 26;
@@ -92,9 +88,7 @@ if (isMarried){
 } else {
     console.log('NO!');
 }
-*/
 
-/*
 if (isMarried){
     console.log(('YES!'));
 }
@@ -104,9 +98,9 @@ if (23 === '23'){
 }
 */
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// Lecture: Boolean logic and switch
+
+//  LECTURE: Boolean logic and switch
 /*
 let age = 20;
 
@@ -137,19 +131,22 @@ switch (job) {
 }
 */
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 // CODING CHALLENGE 1
 
-/*
-John and a friend invented a simple game where the player with the highest value of his height (in centimeters) plus five times his age wins (what a silly game :)
+/* John and a friend invented a simple game where the player with the highest value
+of his height (in centimeters) plus five times his age wins (what a silly game :)
 
 1. Create letiables for the heights and ages of two friends and assign them some values
 2. Calculate their scores
-3. Decide who wins and print the winner to the console. Include the score in the string that you output to the console. Don't forget that there can be a draw (both players with the same score).
+3. Decide who wins and print the winner to the console. Include the score in the
+string that you output to the console. Don't forget that there can be a draw
+(both players with the same score).
 
-4. EXTRA: Add a third player and now decide who wins. Hint: you will need the && operator to take the decision. If you can't solve this one, just watch the solution, it's no problem :)
-*/
+4. EXTRA: Add a third player and now decide who wins. Hint: you will need the
+&& operator to take the decision. If you can't solve this one, just watch the
+solution, it's no problem :) */
 
 // SOLUTION:
 /*
@@ -173,7 +170,6 @@ let heightMary = 158;
 let ageMary = 31;
 let scoreMary = heightMary + 5 * ageMary;
 
-
 if (scoreJohn > scoreMike && scoreJohn > scoreMary) {
     console.log('John wins the game with ' + scoreJohn + ' points!');
 } else if (scoreMike > scoreJohn && scoreMike > scoreMary) {
@@ -185,10 +181,9 @@ if (scoreJohn > scoreMike && scoreJohn > scoreMary) {
 }
 */
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// Lecture: Functions
 
+//  LECTURE: Functions
 /*
 function calculateAge(yearOfBirth){
     let age = 2018 - yearOfBirth;
@@ -217,24 +212,48 @@ yearsUntilRetirement('Sophia', 2000);
 yearsUntilRetirement('Jimmy', 1900);
 */
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// Lecture: Statements and expressions
+
+//  LECTURE: Statements and expressions
 /*
 function someFun(par) {
-    //code
+    // code
 }
 
-var someFun = function(par) {
-    //code
+let someFun = function(par) {
+    // code
 }
 
 // statements (perform only actions without an output)
 if (x === 5) {
-    //do soemthing
+    // do something
 }
 
 // expressions (perform actions and produce an output)
 3 + 4;
-var x = 3;
+let x = 3;
+*/
+
+
+
+//  LECTURE: Arrays
+/*
+const names = ['John', 'Jane', 'Mark'];
+const years = [1990, 1969, 1948];
+
+console.log(names[2]);
+names[1] = 'Ben';
+console.log(names);
+
+const john = ['John', 'Smith', 1990, 'designer', false];
+
+john.push('blue');
+john.unshift('Mr.');
+john.pop();
+john.shift();
+console.log(john);
+
+if (john.indexOf('teacher') === -1) {
+  console.log('John is NOT a teacher.');
+}
 */
