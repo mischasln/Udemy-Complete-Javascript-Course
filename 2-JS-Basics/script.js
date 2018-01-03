@@ -12,7 +12,6 @@ let fullAge = true;
 console.log(fullAge); */
 
 
-
 //  LECTURE: Variables 2
 /* let name = 'John';
 let age = 32;
@@ -40,7 +39,6 @@ console.log(name + ' is a ' + age + ' years old ' + job + '. Is he married? ' + 
 alert(name + ' is a ' + age + ' years old ' + job + '. Is he married? ' + isMarried + '.'); */
 
 
-
 //  LECTURE: Operations
 /* let now = 2018;
 let birthday = now - 26;
@@ -66,7 +64,6 @@ ageMark *= 2;
 
 console.log(ageJohn);
 console.log(ageMark); */
-
 
 
 // LECTURE: If/else statements
@@ -99,7 +96,6 @@ if (23 === '23'){
 */
 
 
-
 //  LECTURE: Boolean logic and switch
 /*
 let age = 20;
@@ -130,7 +126,6 @@ switch (job) {
         console.log('John does something else.');
 }
 */
-
 
 
 // CODING CHALLENGE 1
@@ -182,7 +177,6 @@ if (scoreJohn > scoreMike && scoreJohn > scoreMary) {
 */
 
 
-
 //  LECTURE: Functions
 /*
 function calculateAge(yearOfBirth){
@@ -213,7 +207,6 @@ yearsUntilRetirement('Jimmy', 1900);
 */
 
 
-
 //  LECTURE: Statements and expressions
 /*
 function someFun(par) {
@@ -233,7 +226,6 @@ if (x === 5) {
 3 + 4;
 let x = 3;
 */
-
 
 
 //  LECTURE: Arrays
@@ -256,4 +248,36 @@ console.log(john);
 if (john.indexOf('teacher') === -1) {
   console.log('John is NOT a teacher.');
 }
+*/
+
+
+// LECTURE: Objects
+/*
+let john = {
+    name: 'John',
+    lastName: 'Smith',
+    yearOfBirth: 1990,
+    job: 'teacher',
+    isMarried: false
+};
+
+console.log(john.lastName);
+console.log(john['lastName']);
+
+let xyz = 'job';
+console.log(john[xyz]);
+
+john.lastName = 'Miller';
+john['job'] = 'programmer';
+
+console.log(john);
+
+let jane = new Object();
+jane.name = 'Jane';
+jane.lastName = 'Smith';
+jane['yearOfBirth'] = 1969;
+jane['job'] = 'retired';
+jane['isMarried'] = true;
+
+console.log(jane);
 */
