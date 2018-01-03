@@ -1,4 +1,4 @@
-// Lecture: letiables
+// Lecture: Variables
 /*
 const name = 'John';
 console.log(name);
@@ -12,9 +12,9 @@ console.log(age);
 const fullAge = true;
 console.log(fullAge);
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
-// Lecture: letiables 2
+// Lecture: Variables 2
 let name = 'John';
 let age = 32;
 
@@ -41,6 +41,7 @@ console.log(name + ' is a ' + age + ' years old ' + job + '. Is he married? ' + 
 alert(name + ' is a ' + age + ' years old ' + job + '. Is he married? ' + isMarried + '.');
 */
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // Lecture: Operations
 /*
@@ -70,8 +71,9 @@ console.log(ageJohn);
 console.log(ageMark);
 */
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// Lecture: if/else statements
+// Lecture: If/else statements
 /*
 let name = 'John';
 let age = 26;
@@ -84,7 +86,6 @@ if (isMarried === 'yes') {
 }
 
 isMarried = true;
-
 
 if (isMarried){
     console.log('YES!');
@@ -103,8 +104,9 @@ if (23 === '23'){
 }
 */
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// Lecture: boolean logic and switch
+// Lecture: Boolean logic and switch
 /*
 let age = 20;
 
@@ -135,7 +137,7 @@ switch (job) {
 }
 */
 
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // CODING CHALLENGE 1
 
@@ -183,11 +185,11 @@ if (scoreJohn > scoreMike && scoreJohn > scoreMary) {
 }
 */
 
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // Lecture: Functions
 
-
+/*
 function calculateAge(yearOfBirth){
     let age = 2018 - yearOfBirth;
     return age;
@@ -213,3 +215,26 @@ yearsUntilRetirement('Mike', 1999);
 yearsUntilRetirement('John', 1998);
 yearsUntilRetirement('Sophia', 2000);
 yearsUntilRetirement('Jimmy', 1900);
+*/
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Lecture: Statements and expressions
+/*
+function someFun(par) {
+    //code
+}
+
+var someFun = function(par) {
+    //code
+}
+
+// statements (perform only actions without an output)
+if (x === 5) {
+    //do soemthing
+}
+
+// expressions (perform actions and produce an output)
+3 + 4;
+var x = 3;
+*/
