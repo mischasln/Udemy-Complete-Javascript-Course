@@ -1,5 +1,6 @@
 // Lecture: Variables
-/* const name = 'John';
+/*
+const name = 'John';
 console.log(name);
 
 const lastName = 'Smith';
@@ -9,7 +10,7 @@ const age = 26;
 console.log(age);
 
 const fullAge = true;
-console.log(fullAge); */
+console.log(fullAge);
 
 // Lecture: Variables 2
 let name = 'John';
@@ -36,3 +37,33 @@ console.log(name + ' is a ' + age + ' years old ' + job + '. Is he married? ' + 
 //console.log(lastName);
 
 alert(name + ' is a ' + age + ' years old ' + job + '. Is he married? ' + isMarried + '.');
+*/
+
+// Lecture: Operations
+
+let now = 2018;
+let birthday = now - 26;
+
+birthday = now - 26 * 2;
+// 2018 - 52
+// 1966
+
+console.log(birthday);
+
+let ageJohn = 30;
+let ageMark = 30;
+
+ageJohn = ageMark = (3 + 5) * 4 - 6;
+// ageJohn = ageMark = 26
+// ageJohn = 26
+
+ageJohn++;
+// ageJohn = 27
+
+ageMark *= 2;
+// ageMark = 52
+
+console.log(ageJohn);
+console.log(ageMark);
+
+
