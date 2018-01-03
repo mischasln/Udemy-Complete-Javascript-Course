@@ -1,4 +1,4 @@
-// Lecture: Variables
+// Lecture: letiables
 /*
 const name = 'John';
 console.log(name);
@@ -14,7 +14,7 @@ console.log(fullAge);
 
 
 
-// Lecture: Variables 2
+// Lecture: letiables 2
 let name = 'John';
 let age = 32;
 
@@ -40,7 +40,6 @@ console.log(name + ' is a ' + age + ' years old ' + job + '. Is he married? ' + 
 
 alert(name + ' is a ' + age + ' years old ' + job + '. Is he married? ' + isMarried + '.');
 */
-
 
 
 // Lecture: Operations
@@ -72,9 +71,8 @@ console.log(ageMark);
 */
 
 
-
 // Lecture: if/else statements
-
+/*
 let name = 'John';
 let age = 26;
 let isMarried = 'no';
@@ -87,7 +85,7 @@ if (isMarried === 'yes') {
 
 isMarried = true;
 
-/*
+
 if (isMarried){
     console.log('YES!');
 } else {
@@ -95,6 +93,7 @@ if (isMarried){
 }
 */
 
+/*
 if (isMarried){
     console.log(('YES!'));
 }
@@ -102,4 +101,36 @@ if (isMarried){
 if (23 === '23'){
     console.log(('Something to print.'));
 }
+*/
 
+
+// Lecture: boolean logic and switch
+/*
+let age = 20;
+
+if (age < 20) {
+    console.log('John is a teenager');
+} else if (age >= 20 && age < 30) {
+    console.log('John is a young man.');
+} else {
+    console.log('John is a man.');
+}
+
+let job = 'teacher';
+
+job = prompt('What does john do?');
+
+switch (job) {
+    case 'teacher':
+        console.log('John teaches kids.');
+        break;
+    case 'driver':
+        console.log('John drives a cab in Lisbon.');
+        break;
+    case 'cop':
+        console.log('John helps fight crime.');
+        break;
+    default:
+        console.log('John does something else.');
+}
+*/
