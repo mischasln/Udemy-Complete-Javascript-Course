@@ -12,7 +12,6 @@ let fullAge = true;
 console.log(fullAge); */
 
 
-
 //  LECTURE: Variables 2
 /* let name = 'John';
 let age = 32;
@@ -40,7 +39,6 @@ console.log(name + ' is a ' + age + ' years old ' + job + '. Is he married? ' + 
 alert(name + ' is a ' + age + ' years old ' + job + '. Is he married? ' + isMarried + '.'); */
 
 
-
 //  LECTURE: Operations
 /* let now = 2018;
 let birthday = now - 26;
@@ -66,7 +64,6 @@ ageMark *= 2;
 
 console.log(ageJohn);
 console.log(ageMark); */
-
 
 
 // LECTURE: If/else statements
@@ -99,7 +96,6 @@ if (23 === '23'){
 */
 
 
-
 //  LECTURE: Boolean logic and switch
 /*
 let age = 20;
@@ -130,7 +126,6 @@ switch (job) {
         console.log('John does something else.');
 }
 */
-
 
 
 // CODING CHALLENGE 1
@@ -183,7 +178,6 @@ if (scoreJohn > scoreMike && scoreJohn > scoreMary) {
 */
 
 
-
 //  LECTURE: Functions
 /*
 function calculateAge(yearOfBirth){
@@ -214,7 +208,6 @@ yearsUntilRetirement('Jimmy', 1900);
 */
 
 
-
 //  LECTURE: Statements and expressions
 /*
 function someFun(par) {
@@ -234,7 +227,6 @@ if (x === 5) {
 3 + 4;
 let x = 3;
 */
-
 
 
 //  LECTURE: Arrays
@@ -258,7 +250,6 @@ if (john.indexOf('teacher') === -1) {
   console.log('John is NOT a teacher.');
 }
 */
-
 
 
 // LECTURE: Objects
@@ -291,7 +282,6 @@ jane['isMarried'] = true;
 
 console.log(jane);
 */
-
 
 
 // LECTURE: Objects and methods
@@ -346,7 +336,6 @@ let mike = {
 mike.calculateAge();
 console.log(mike);
 */
-
 
 
 // LECTURE: Loops and iterations
@@ -404,3 +393,62 @@ for (var i = 1; i <= 5; i++) {
     console.log(i);
 }
 */
+
+
+// CODING CHALLENGE 2
+
+/*
+1. Create an array with some years where persons were born
+2. Create an empty array (just [] )
+3. Use a loop to fill the array with the ages of the persons
+4. Use another loop to log into the console whether each person is of full age (18 or older), as well as their age
+
+5. Finally, create a function called printFullAge which receives the array of years as an argument, executes
+the steps 2., 3. and 4. and returns an array of true/false boolean values: true if the person is of full age
+(>= 18 years) and false if not (< 18 years)
+6. Call the function with two different arrays and store the results in two variables: full_1 and full_2
+
+Example input:  [1965, 2008, 1992]
+Example output: [true, false, true]
+
+Hint: you can use a loop not only to read from an array, like y[i], but also to set values in an array,
+like y[i] = ... You can also use the specific array methods.
+*/
+
+function printFullAge(years){
+    let ages = [];
+    let fullAges = [];
+
+    // for loop
+    for (i = 0; i < years.length; i++) {
+        ages[i] = 2018 - years[i];
+        console.log(ages[i]);
+    }
+
+    /*
+    // while loop
+    let i = 0;
+    while (i < years.length){
+        ages[i] = 2018 - years[i];
+        console.log(ages[i]);
+        i++;
+    }
+    */
+
+    for (i = 0; i < ages.length; i++) {
+        if (ages[i] >= 18) {
+            console.log('With and age of ' + ages[i] + ' person ' + (i + 1) + ' is of full age.');
+            fullAges.push(true);
+        } else {
+            console.log('With and age of ' + ages[i] + ' person ' + (i + 1) + ' is NOT of full age.');
+            fullAges.push(false);
+        }
+    }
+
+    return fullAges;
+}
+
+let years = [1980, 1985, 1999, 1956, 2000, 2005, 2010];
+let full_1 = printFullAge(years);
+let full_2 = printFullAge([1980, 1985, 1999]);
+
