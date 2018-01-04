@@ -12,6 +12,7 @@ let fullAge = true;
 console.log(fullAge); */
 
 
+
 //  LECTURE: Variables 2
 /* let name = 'John';
 let age = 32;
@@ -39,6 +40,7 @@ console.log(name + ' is a ' + age + ' years old ' + job + '. Is he married? ' + 
 alert(name + ' is a ' + age + ' years old ' + job + '. Is he married? ' + isMarried + '.'); */
 
 
+
 //  LECTURE: Operations
 /* let now = 2018;
 let birthday = now - 26;
@@ -64,6 +66,7 @@ ageMark *= 2;
 
 console.log(ageJohn);
 console.log(ageMark); */
+
 
 
 // LECTURE: If/else statements
@@ -94,6 +97,7 @@ if (23 === '23'){
     console.log(('Something to print.'));
 }
 */
+
 
 
 //  LECTURE: Boolean logic and switch
@@ -128,6 +132,7 @@ switch (job) {
 */
 
 
+
 // CODING CHALLENGE 1
 
 /* John and a friend invented a simple game where the player with the highest value
@@ -142,6 +147,7 @@ string that you output to the console. Don't forget that there can be a draw
 4. EXTRA: Add a third player and now decide who wins. Hint: you will need the
 && operator to take the decision. If you can't solve this one, just watch the
 solution, it's no problem :) */
+
 
 // SOLUTION:
 /*
@@ -177,6 +183,7 @@ if (scoreJohn > scoreMike && scoreJohn > scoreMary) {
 */
 
 
+
 //  LECTURE: Functions
 /*
 function calculateAge(yearOfBirth){
@@ -207,6 +214,7 @@ yearsUntilRetirement('Jimmy', 1900);
 */
 
 
+
 //  LECTURE: Statements and expressions
 /*
 function someFun(par) {
@@ -226,6 +234,7 @@ if (x === 5) {
 3 + 4;
 let x = 3;
 */
+
 
 
 //  LECTURE: Arrays
@@ -249,6 +258,7 @@ if (john.indexOf('teacher') === -1) {
   console.log('John is NOT a teacher.');
 }
 */
+
 
 
 // LECTURE: Objects
@@ -280,4 +290,59 @@ jane['job'] = 'retired';
 jane['isMarried'] = true;
 
 console.log(jane);
+*/
+
+
+
+// LECTURE: Objects and methods
+
+// v1.0
+/*
+let john = {
+    name: 'John',
+    lastName: 'Smith',
+    yearOfBirth: 1990,
+    job: 'teacher',
+    isMarried: false,
+    family: ['Jane', 'Mark', 'Bob'],
+    calculateAge: function() {
+        return 2016 - this.yearOfBirth;
+    }
+};
+
+console.log(john.calculateAge());
+
+let age = john.calculateAge();
+john.age = age;
+
+console.log(john);
+
+
+
+//v2.0
+let john = {
+    name: 'John',
+    lastName: 'Smith',
+    yearOfBirth: 1990,
+    job: 'teacher',
+    isMarried: false,
+    family: ['Jane', 'Mark', 'Bob'],
+    calculateAge: function() {
+        this.age = 2016 - this.yearOfBirth;
+    }
+};
+
+john.calculateAge();
+console.log(john);
+
+
+let mike = {
+    yearOfBirth: 1950,
+    calculateAge: function() {
+        this.age = 2016 - this.yearOfBirth;
+    }
+};
+
+mike.calculateAge();
+console.log(mike);
 */
