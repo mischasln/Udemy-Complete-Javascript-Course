@@ -9,7 +9,7 @@ function calculateAge(year) {
 }
 
 // retirement(1956);
-var retirement = function(year) {
+let retirement = function(year) {
     console.log(65 - (2016 - year));
 }
 
@@ -17,11 +17,11 @@ var retirement = function(year) {
 // variables
 
 console.log(age);
-var age = 23;
+let age = 23;
 
 function foo() {
     console.log(age);
-    var age = 65;
+    let age = 65;
     console.log(age);
 }
 foo();
@@ -36,15 +36,15 @@ console.log(age);
 // First scoping example
 
 /*
-var a = 'Hello!';
+let a = 'Hello!';
 first();
 
 function first() {
-    var b = 'Hi!';
+    let b = 'Hi!';
     second();
 
     function second() {
-        var c = 'Hey!';
+        let c = 'Hey!';
         console.log(a + b + c);
     }
 }
@@ -54,21 +54,21 @@ function first() {
 // Example to show the difference between execution stack and scope chain
 
 /*
-var a = 'Hello!';
+let a = 'Hello!';
 first();
 
 function first() {
-    var b = 'Hi!';
+    let b = 'Hi!';
     second();
 
     function second() {
-        var c = 'Hey!';
+        let c = 'Hey!';
         third()
     }
 }
 
 function third() {
-    var d = 'John';
+    let d = 'John';
     console.log(a + b + c + d);
 }
 */
@@ -77,17 +77,16 @@ function third() {
 
 // LECTURE: The this keyword
 
+// console.log(this);
 /*
-//console.log(this);
-
 calculateAge(1985);
 
 function calculateAge(year) {
-    console.log(2016 - year);
+    console.log(2018 - year);
     console.log(this);
 }
 
-var john = {
+let john = {
     name: 'John',
     yearOfBirth: 1990,
     calculateAge: function() {
@@ -99,11 +98,11 @@ var john = {
         }
         innerFunction();
     }
-}
+};
 
 john.calculateAge();
 
-var mike = {
+let mike = {
     name: 'Mike',
     yearOfBirth: 1984
 };
