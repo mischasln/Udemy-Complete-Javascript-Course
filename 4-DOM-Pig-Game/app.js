@@ -9,11 +9,15 @@ GAME RULES:
 
 */
 
-let scores, roundScores, activePlayer, dice;
+const scores = [0, 0];
+const roundScores = 0;
+const activePlayer = 1;
 
-scores = [0,0];
-roundScores = 0;
-activePlayer = 0;
+// random rumber
+const dice = Math.floor(Math.random() * 6) + 1;
 
-dice = Math.floor(Math.random() * 6) + 1;
+// document.querySelector('#current-' + activePlayer).textContent = dice;
 
+// display the results
+document.querySelector(`#current-${activePlayer}`)
+    .innerHTML = `<em>${dice}</em>`;
