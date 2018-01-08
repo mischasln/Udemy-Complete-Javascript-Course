@@ -11,9 +11,9 @@ gets added to his GLBAL score. After that, it's the next player's turn
 - The first player to reach 100 points on GLOBAL score wins the game
 */
 
-const scores = [0, 0];
-const roundScores = 0;
-const activePlayer = 0;
+let scores = [0, 0];
+let roundScore = 0;
+let activePlayer = 0;
 
 // hide dice on initial game opening
 document.getElementById('dice').style.display = 'none';
@@ -28,14 +28,34 @@ document.getElementById('current-1').textContent = '0';
 document.getElementById('btn-roll').addEventListener('click', function() {
 
   // 1. random number
-  const dice = Math.floor(Math.random() * 6) + 1;
+  let dice = Math.floor(Math.random() * 6) + 1;
 
   // 2. display the results
-  const diceDom = document.getElementById('dice');
+  let diceDom = document.getElementById('dice');
   diceDom.style.display = 'block';
   diceDom.src = 'dice-' + dice + '.png';
 
   // 3. update round score IF the rolled number was NOT a 1
+  if (dice !== 1) {
+    // add score
+    roundScore += dice;
+    document.getElementById('current-' + activePlayer).innerHTML = roundScore;
+  } else {
+    // next player
+    activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
+    roundScore = 0;
+
+    document.getElementById('current-0').textContent = '0';
+    document.getElementById('current-1').textContent = '0';
+
+    // document.querySelector('.player-0-panel').classList.remove('active');
+    // document.querySelector('.player-1-panel').classList.add('active');
+
+    document.querySelector('.player-0-panel').classList.toggle('active');
+    document.querySelector('.player-1-panel').classList.toggle('active');
+
+    document.getElementById('dice').style.display = 'none';
+  }
 
 });
 
@@ -44,4 +64,3 @@ document.getElementById('btn-roll').addEventListener('click', function() {
 
 // display the results in current player box
 // document.querySelector('#current-' + activePlayer).textContent = dice;
-// document.getElementById('current-' + activePlayer).innerHTML = dice;
