@@ -15,13 +15,33 @@ const scores = [0, 0];
 const roundScores = 0;
 const activePlayer = 0;
 
-// random rumber
-const dice = Math.floor(Math.random() * 6) + 1;
-
-// document.querySelector('#current-' + activePlayer).textContent = dice;
-
-// display the results
-document.getElementById('current-' + activePlayer).innerHTML = dice;
-
 // hide dice on initial game opening
-document.querySelector('.dice').style.display = 'none';
+document.getElementById('dice').style.display = 'none';
+
+// set initial dice values to 0
+document.getElementById('score-0').textContent = '0';
+document.getElementById('score-1').textContent = '0';
+document.getElementById('current-0').textContent = '0';
+document.getElementById('current-1').textContent = '0';
+
+// roll the dice
+document.getElementById('btn-roll').addEventListener('click', function() {
+
+  // 1. random number
+  const dice = Math.floor(Math.random() * 6) + 1;
+
+  // 2. display the results
+  const diceDom = document.getElementById('dice');
+  diceDom.style.display = 'block';
+  diceDom.src = 'dice-' + dice + '.png';
+
+  // 3. update round score IF the rolled number was NOT a 1
+
+});
+
+
+
+
+// display the results in current player box
+// document.querySelector('#current-' + activePlayer).textContent = dice;
+// document.getElementById('current-' + activePlayer).innerHTML = dice;
