@@ -7,54 +7,59 @@ Each result get added to his ROUND score
 - BUT, if the player rolls a 1, all his ROUND score gets lost.
 After that, it's the next player's turn
 - The player can choose to 'Hold', which means that his ROUND score
-gets added to his GLBAL score. After that, it's the next player's turn
+gets added to his GLOBAL score. After that, it's the next player's turn
 - The first player to reach 100 points on GLOBAL score wins the game
 */
 let scores;
 let roundScore;
 let activePlayer;
+let gamePlaying;
 
 init();
 
 // roll the dice
 document.getElementById('btn-roll').addEventListener('click', function () {
+    if (gamePlaying) {
+        // 1. random number
+        let dice = Math.floor(Math.random() * 6) + 1;
 
-    // 1. random number
-    let dice = Math.floor(Math.random() * 6) + 1;
+        // 2. display the results
+        let diceDom = document.getElementById('dice');
+        diceDom.style.display = 'block';
+        diceDom.src = 'dice-' + dice + '.png';
 
-    // 2. display the results
-    let diceDom = document.getElementById('dice');
-    diceDom.style.display = 'block';
-    diceDom.src = 'dice-' + dice + '.png';
-
-    // 3. update round score IF the rolled number was NOT a 1
-    if (dice !== 1) {
-        // add score
-        roundScore += dice;
-        document.getElementById('current-' + activePlayer).innerHTML = roundScore;
-    } else {
-        // next player
-        nextPlayer();
+        // 3. update round score IF the rolled number was NOT a 1
+        if (dice !== 1) {
+            // add score
+            roundScore += dice;
+            document.getElementById('current-' + activePlayer).innerHTML = roundScore;
+        } else {
+            // next player
+            nextPlayer();
+        }
     }
 });
 
 document.getElementById('btn-hold').addEventListener('click', function () {
-    // 1. add current score to global score
-    scores[activePlayer] += roundScore;
+    if (gamePlaying) {
+        // 1. add current score to global score
+        scores[activePlayer] += roundScore;
 
-    // 2. update user interface
-    document.getElementById('score-' + activePlayer).textContent = scores[activePlayer];
+        // 2. update user interface
+        document.getElementById('score-' + activePlayer).textContent = scores[activePlayer];
 
 
-    // 3. check if player one the game
-    if (scores[activePlayer] >= 20) {
-        document.getElementById('name-' + activePlayer).textContent = 'Winner!';
-        document.getElementById('dice').style.display = 'none';
-        document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
-        document.querySelector('.player-' + activePlayer + '-panel').classList.remove('active');
-    } else {
-        // next player
-        nextPlayer();
+        // 3. check if player one the game
+        if (scores[activePlayer] >= 20) {
+            document.getElementById('name-' + activePlayer).textContent = 'Winner!';
+            document.getElementById('dice').style.display = 'none';
+            document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
+            document.querySelector('.player-' + activePlayer + '-panel').classList.remove('active');
+            gamePlaying = false;
+        } else {
+            // next player
+            nextPlayer();
+        }
     }
 });
 
