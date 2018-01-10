@@ -10,19 +10,11 @@ After that, it's the next player's turn
 gets added to his GLBAL score. After that, it's the next player's turn
 - The first player to reach 100 points on GLOBAL score wins the game
 */
+let scores;
+let roundScore;
+let activePlayer;
 
-let scores = [0, 0];
-let roundScore = 0;
-let activePlayer = 0;
-
-// hide dice on initial game opening
-document.getElementById('dice').style.display = 'none';
-
-// set initial dice values to 0
-document.getElementById('score-0').textContent = '0';
-document.getElementById('score-1').textContent = '0';
-document.getElementById('current-0').textContent = '0';
-document.getElementById('current-1').textContent = '0';
+init();
 
 // roll the dice
 document.getElementById('btn-roll').addEventListener('click', function () {
@@ -55,9 +47,8 @@ document.getElementById('btn-hold').addEventListener('click', function () {
 
 
     // 3. check if player one the game
-    if (scores[activePlayer] >= 10) {
-        document.getElementById('name-' + activePlayer)
-            .textContent = 'Winner!';
+    if (scores[activePlayer] >= 20) {
+        document.getElementById('name-' + activePlayer).textContent = 'Winner!';
         document.getElementById('dice').style.display = 'none';
         document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
         document.querySelector('.player-' + activePlayer + '-panel').classList.remove('active');
@@ -84,6 +75,29 @@ function nextPlayer() {
     document.getElementById('dice').style.display = 'none';
 }
 
+document.getElementById('btn-new').addEventListener('click', init);
+
+function init() {
+    scores = [0, 0];
+    roundScore = 0;
+    activePlayer = 0;
+
+    // hide dice on initial game opening
+    document.getElementById('dice').style.display = 'none';
+
+    // set initial dice values to 0
+    document.getElementById('score-0').textContent = '0';
+    document.getElementById('score-1').textContent = '0';
+    document.getElementById('current-0').textContent = '0';
+    document.getElementById('current-1').textContent = '0';
+    document.getElementById('name-0').textContent = 'Player 1';
+    document.getElementById('name-1').textContent = 'Player 2';
+    document.querySelector('.player-0-panel').classList.remove('winner');
+    document.querySelector('.player-1-panel').classList.remove('winner');
+    document.querySelector('.player-0-panel').classList.remove('active');
+    document.querySelector('.player-1-panel').classList.remove('active');
+    document.querySelector('.player-0-panel').classList.add('active');
+}
 
 // display the results in current player box
 // document.querySelector('#current-' + activePlayer).textContent = dice;
