@@ -13,6 +13,7 @@ is a 1. (Hint: You will need CSS to position the second dice, so take a look at 
 
 let scores;
 let roundScore;
+let winningScore;
 let activePlayer;
 let gamePlaying;
 
@@ -58,9 +59,17 @@ document.getElementById('btn-hold').addEventListener('click', function () {
         // 2. update user interface
         document.getElementById('score-' + activePlayer).textContent = scores[activePlayer];
 
+        let input = document.getElementById('final-score').value;
 
-        // 3. check if player one the game
-        if (scores[activePlayer] >= 100) {
+        // undefined, 0, null or "" are coerced to false, anything else is coerced to true
+        if (input) {
+            winningScore = input;
+        } else {
+            winningScore = 100;
+        }
+
+        // 3. check if player won the game
+        if (scores[activePlayer] >= winningScore) {
             document.getElementById('name-' + activePlayer).textContent = 'Winner!';
             document.getElementById('dice').style.display = 'none';
             document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
