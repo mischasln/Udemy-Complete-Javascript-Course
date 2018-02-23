@@ -1,11 +1,6 @@
 // function constructor
 
-let john = {
-    name: 'John',
-    yearOfBirth: '1990',
-    job: 'teacher'
-};
-
+/*
 let Person = function (name, yearOfBirth, job) {
     this.name = name;
     this.yearOfBirth = yearOfBirth;
@@ -29,3 +24,24 @@ mark.calculateAge();
 console.log(mischa.lastName);
 console.log(jane.lastName);
 console.log(mark.lastName);
+*/
+
+
+// object.create
+
+let personProto = {
+    calculateAge: function () {
+        console.log(2018 - this.yearOfBirth);
+    }
+};
+
+let mischa = Object.create(personProto);
+mischa.name = 'Mischa';
+mischa.yearOfBirth = 1985;
+mischa.job = 'Developer';
+
+let jane = Object.create(personProto, {
+    name: {value: 'Jane'},
+    yearOfBirth: {value: 1990},
+    job: {value: 'Teacher'}
+});
