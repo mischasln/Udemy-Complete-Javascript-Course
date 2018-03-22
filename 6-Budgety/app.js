@@ -315,7 +315,6 @@ let UIController = (function () {
             });
 
             document.querySelector(DOMstrings.inputBtn).classList.toggle('red');
-
         },
 
         getDOMstrings: function () {
