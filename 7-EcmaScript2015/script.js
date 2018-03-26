@@ -57,8 +57,6 @@ console.log(i);
 */
 
 
-
-
 /////////////////////////////////
 // Lecture: Blocks and IIFEs
 
@@ -81,8 +79,6 @@ console.log(c);
 
 //console.log(c);
 */
-
-
 
 
 /////////////////////////////////
@@ -111,8 +107,6 @@ console.log(n.endsWith('Sm'));
 console.log(n.includes('oh'));
 console.log(`${firstName} `.repeat(5));
 */
-
-
 
 
 /////////////////////////////////
@@ -151,8 +145,6 @@ return `Age element ${index + 1}: ${age}.`
 ;
 console.log(ages6);
 */
-
-
 
 
 /////////////////////////////////
@@ -235,8 +227,6 @@ new Person('Mike').myFriends6(friends);
 */
 
 
-
-
 /////////////////////////////////
 // Lecture: Destructuring
 
@@ -278,27 +268,25 @@ console.log(retirement);
 */
 
 
-
-
 /////////////////////////////////
 // Lecture: Arrays
 
 /*
 const boxes = document.querySelectorAll('.box');
 
-//ES5
+// ES5
 var boxesArr5 = Array.prototype.slice.call(boxes);
 boxesArr5.forEach(function(cur) {
     cur.style.backgroundColor = 'dodgerblue';
 });
 
 
-//ES6
+// ES6
 const boxesArr6 = Array.from(boxes);
 Array.from(boxes).forEach(cur => cur.style.backgroundColor = 'dodgerblue');
 
 
-//ES5
+// ES5
 for(var i = 0; i < boxesArr5.length; i++) {
 
     if(boxesArr5[i].className === 'box blue') {
@@ -310,7 +298,7 @@ for(var i = 0; i < boxesArr5.length; i++) {
 }
 
 
-//ES6
+// ES6
 for (const cur of boxesArr6) {
     if (cur.className.includes('blue')) {
         continue;
@@ -319,7 +307,7 @@ for (const cur of boxesArr6) {
 }
 
 
-//ES5
+// ES5
 var ages = [12, 17, 8, 21, 14, 11];
 
 var full = ages.map(function(cur) {
@@ -331,12 +319,10 @@ console.log(full.indexOf(true));
 console.log(ages[full.indexOf(true)]);
 
 
-//ES6
+// ES6
 console.log(ages.findIndex(cur => cur >= 18));
 console.log(ages.find(cur => cur >= 18));
 */
-
-
 
 
 /////////////////////////////////
@@ -350,13 +336,13 @@ var sum1 = addFourAges(18, 30, 12, 21);
 console.log(sum1);
 
 
-//ES5
+// ES5
 var ages = [18, 30, 12, 21];
 var sum2 = addFourAges.apply(null, ages);
 console.log(sum2);
 
 
-//ES6
+// ES6
 const sum3 = addFourAges(...ages);
 console.log(sum3);
 
@@ -375,13 +361,11 @@ Array.from(all).forEach(cur => cur.style.color = 'purple');
 */
 
 
-
-
 /////////////////////////////////
 // Lecture: Rest parameters
 
 /*
-//ES5
+// ES5
 function isFullAge5() {
     //console.log(arguments);
     var argsArr = Array.prototype.slice.call(arguments);
@@ -396,7 +380,7 @@ function isFullAge5() {
 //isFullAge5(1990, 1999, 1965, 2016, 1987);
 
 
-//ES6
+// ES6
 function isFullAge6(...years) {
     years.forEach(cur => console.log( (2016 - cur) >= 18));
 }
@@ -404,7 +388,7 @@ function isFullAge6(...years) {
 isFullAge6(1990, 1999, 1965, 2016, 1987);
 
 
-//ES5
+// ES5
 function isFullAge5(limit) {
     var argsArr = Array.prototype.slice.call(arguments, 1);
 
@@ -418,7 +402,7 @@ function isFullAge5(limit) {
 isFullAge5(1990, 1999, 1965, 2016, 1987);
 
 
-//ES6
+// ES6
 function isFullAge6(limit, ...years) {
     years.forEach(cur => console.log( (2016 - cur) >= limit));
 }
@@ -427,11 +411,10 @@ isFullAge6(16, 1990, 1999, 1965, 2016, 1987);
 */
 
 
-
-
 /////////////////////////////////
 // Lecture: Default parameters
 
+/*
 // ES5
 function SmithPerson(firstName, yearOfBirth, lastName, nationality) {
 
@@ -445,7 +428,7 @@ function SmithPerson(firstName, yearOfBirth, lastName, nationality) {
 }
 
 
-//ES6
+// ES6
 function SmithPerson(firstName, yearOfBirth, lastName = 'Smith', nationality = 'american') {
     this.firstName = firstName;
     this.lastName = lastName;
@@ -456,3 +439,44 @@ function SmithPerson(firstName, yearOfBirth, lastName = 'Smith', nationality = '
 
 var john = new SmithPerson('John', 1990);
 var emily = new SmithPerson('Emily', 1983, 'Diaz', 'spanish');
+*/
+
+
+
+
+/////////////////////////////////
+// Lecture: Maps
+
+const question = new Map();
+question.set('question', 'What is the official name of the latest major JavaScript version?');
+question.set(1, 'ES5');
+question.set(2, 'ES6');
+question.set(3, 'ES2015');
+question.set(4, 'ES7');
+question.set('correct', 3);
+question.set(true, 'Correct answer :D');
+question.set(false, 'Wrong, please try again!');
+
+console.log(question.get('question'));
+//console.log(question.size);
+
+
+if (question.has(4)) {
+    //question.delete(4);
+    //console.log('Answer 4 is here')
+}
+
+//question.clear();
+
+
+//question.forEach((value, key) => console.log(`This is ${key}, and it's set to ${value}`));
+
+
+for (let [key, value] of question.entries()) {
+    if (typeof(key) === 'number') {
+        console.log(`Answer ${key}: ${value}`);
+    }
+}
+
+const ans = parseInt(prompt('Write the correct answer'));
+console.log(question.get(ans === question.get('correct')));
