@@ -60,6 +60,7 @@ console.log(i);
 /////////////////////////////////
 // Lecture: Blocks and IIFEs
 
+/*
 // ES6
 {
     const a = 1;
@@ -77,3 +78,21 @@ console.log(c);
 })();
 
 //console.log(c);
+*/
+
+/////////////////////////////////
+// Lecture: Strings
+
+let firstName = 'John';
+let lastName = 'Smith';
+const yearOfBirth = 1990;
+
+function calcAge(year) {
+    return 2016 - year;
+}
+
+// ES5
+console.log('This is ' + firstName + ' ' + lastName + '. He was born in ' + yearOfBirth + '. Today, he is ' + calcAge(yearOfBirth) + ' years old.');
+
+// ES6
+console.log(`This is ${firstName} ${lastName}. He was born in ${yearOfBirth}. Today, he is ${calcAge(yearOfBirth)} years old.`);
