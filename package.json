@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Udemy Complete Javascript Course",
   "main": "index.js",
+  "scripts": {
+    "babel": "babel src -d lib"
+  },
   "dependencies": {
     "eslint": "^4.12.1",
     "eslint-config-airbnb": "^16.1.0",
@@ -10,7 +13,11 @@
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.5.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "presets": ["env"]
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
